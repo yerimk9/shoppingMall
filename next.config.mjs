@@ -11,7 +11,6 @@ const nextConfig = {
       },
     ],
   },
-  mode: "jit",
 };
 
 export default nextConfig;
