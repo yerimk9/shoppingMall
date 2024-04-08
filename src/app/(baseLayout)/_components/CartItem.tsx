@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import Carousel from "./Carousel";
-import { CartItem } from "../_types";
+import type { CartItem } from "../_types";
 import getCartItems from "../_services/_localstorage/getCartItems";
 
 function CartItem({ product }: { product: CartItem }) {

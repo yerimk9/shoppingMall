@@ -4,10 +4,10 @@ import React from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import Image from "next/image";
 import { IconCart } from "../../../../public/svgs";
-import { CartItem, ProductItemDescription } from "../_types";
+import { CartItem, Product } from "../_types";
 import getCartItems from "../_services/_localstorage/getCartItems";
 
-function ItemDescription({ product }: { product: ProductItemDescription }) {
+function ItemDescription({ product }: { product: Product }) {
   const queryClient = useQueryClient();
 
   const uploadMutation = useMutation({
