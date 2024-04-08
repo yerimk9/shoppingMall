@@ -39,7 +39,7 @@ function Nav() {
         content: "로그아웃 되었습니다.",
       });
     } catch (error: any) {
-      console.log(error);
+      console.error(error);
       messageApi.open({
         type: "error",
         content: "로그아웃 실패.",

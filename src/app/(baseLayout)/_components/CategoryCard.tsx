@@ -49,7 +49,6 @@ const categories: CategoryImages = {
 
 function CategoryCard({ category }: { category: keyof CategoryImages }) {
   const { src: backgroundImage } = categories[category];
-  console.log("Background image:", backgroundImage);
   return (
     <>
       <div
