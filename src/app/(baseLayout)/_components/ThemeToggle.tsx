@@ -8,7 +8,6 @@ import { changeMode } from "@/redux/features/darkSlice";
 function ThemeToggle() {
   const darkMode = useAppSelector((state) => state.DarkModeReducer.value);
   const dispatch = useAppDispatch();
-  console.log(darkMode);
 
   return (
     <>
