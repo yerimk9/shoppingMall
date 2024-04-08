@@ -42,7 +42,7 @@ function CategoryStore({ params }: { params: { category: string } }) {
       const { products } =
         params.category === "all"
           ? await getProducts()
-          : await getCategory(params.category);
+          : await getCategory(checkCategory);
       setProducts(products);
 
       if (value) {
@@ -57,7 +57,7 @@ function CategoryStore({ params }: { params: { category: string } }) {
     };
     getCategoriesData();
     getProductsData();
-  }, [checkCategory, value]);
+  }, [value]);
 
   return (
     <div>
