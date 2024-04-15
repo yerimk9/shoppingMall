@@ -8,6 +8,7 @@ import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { app } from "@/firebase";
 import { message } from "antd";
 import { useAppSelector } from "@/redux/hooks";
+import { FirebaseError } from "firebase/app";
 
 function SignUp() {
   const [messageApi, contextHolder] = message.useMessage();
@@ -77,14 +78,15 @@ function SignUp() {
         content: `"${user.email}" 회원가입 완료`,
       });
       router.push("/login");
-    } catch (e: any) {
-      if (e.code === "auth/email-already-in-use") {
-        messageApi.open({
-          type: "error",
-          content: "이미 사용중인 이메일 주소입니다.",
-        });
+    } catch (e) {
+      if (e instanceof FirebaseError) {
+        if (e.code === "auth/email-already-in-use") {
+          messageApi.open({
+            type: "error",
+            content: "이미 사용중인 이메일 주소입니다.",
+          });
+        }
       }
-      console.error(e.code);
     }
   };
 

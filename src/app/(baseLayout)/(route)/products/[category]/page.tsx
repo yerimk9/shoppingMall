@@ -17,7 +17,7 @@ function CategoryStore({ params }: { params: { category: string } }) {
 
   const debounce = (func: Function, timeout: number = 1000) => {
     let timer: ReturnType<typeof setTimeout>;
-    return (...args: any[]) => {
+    return (...args: unknown[]) => {
       clearTimeout(timer);
       timer = setTimeout(() => {
         func.apply(null, args);
